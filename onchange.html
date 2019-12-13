@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ex2</title>
+</head>
+<body>
+	<select name="" id="nation">
+		<option value="">숫자를 선택해 주세요.</option>
+		<option value="0">No.1</option>
+		<option value="1">No.2</option>
+		<option value="2">No.3</option>
+		<option value="3">No.4</option>
+	</select>
+	<ul>
+		<li>대한민국</li>
+		<li>중국</li>
+		<li>미국</li>
+		<li>베트남</li>
+	</ul>
+	<script>
+		window.onload = () =>{
+			const $nation = document.getElementById('nation')
+			const $li = document.getElementsByTagName('li')
+
+			$nation.onchange = function(){
+				$li[0].style.backgroundColor = ''
+				$li[1].style.backgroundColor = ''
+				$li[2].style.backgroundColor = ''
+				$li[3].style.backgroundColor = ''
+				$li[this.value].style.backgroundColor = 'Yellow'
+			}
+		}
+	</script>
+</body>
+</html>

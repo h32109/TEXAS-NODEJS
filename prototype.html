@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ex8</title>
+	<script src="prototype.js"></script>
+	<script src="prototypeService.js"></script>
+</head>
+<body>
+<script>
+window.onload = function(){
+	const init = new Initializer()
+	init.animal()
+	const a = new Animal('강아지')
+	a.setName('강아지')
+	//alert(`동물이름 : ${a.getName()}`)
+	init.human()
+	let b = new Human()
+	b.setName('홍길동')
+	//alert(`사람이름 : ${b.getName()}`)
+	init.superHero()
+	let c = new SuperHero()
+	c.setName('아이언맨')
+	//alert(`히어로이름 : ${c.getName()}`)
+}	
+	</script>
+</body>
+</html>

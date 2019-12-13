@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ex3</title>
+</head>
+<body>
+	<div>
+		<h3>성별은 무엇입니까?</h3>
+		<input type="radio" name="gender" value="M" checked> 남
+		<input type="radio" name="gender" value="F" > 여
+		</br>
+		<h3>결혼은 하셨나요?</h3>
+		<input type="radio" name="married" value="Y" checked> 기혼
+		<input type="radio" name="married" value="N" > 미혼
+		</br></br>
+		<input type="button" id="btn" value="확인">
+		</br></br>
+	</div>
+			<div id = "result"></div>
+	<script>
+		window.onload =()=>{
+			const gender = document.getElementsByName('gender')
+			const married = document.getElementsByName('married')
+			const btn = document.getElementById('btn')
+			const result = document.getElementById('result')
+
+
+			btn.onclick = function(){
+					let str = ' '
+					str = (gender[0].checked == true)
+								? (married[0].checked == true)
+									? '<h1>기혼남성</h1>' : '<h1>미혼남성</h1>'
+								: (married[0].checked == true)
+									? '<h1>기혼여성</h1>' : '<h1>미혼여성</h1>'
+					result.innerHTML = str
+		}
+			
+		}	
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ex5</title>
+</head>
+<body>
+	<div id = "box"></div>
+	<script>
+		window.onload = () =>{
+			const temp = ` <form id = "form_join" class="form-signin">
+		    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+		    <label for="inputEmail" class="sr-only">Email address</label>
+		    <input type="text" id="uid" value="01ph63" class="form-control" placeholder="Email address" required="" autofocus=""></br></input>
+		    <label for="inputPassword" class="sr-only">Password</label>
+		    <input type="password" id="pwd" value = "1"  class="form-control" placeholder="Password" required=""></input>
+		    <div class="checkbox mb-3">
+		      <label>
+		      <a id = "a_go_join" href="#">회원가입</a>
+		      </label>
+		      <label>
+		      <a id = "a_go_admin" href="#">관리자모드</a>
+		      </label>
+		    </div>
+		    <input value = "로그인"type = "button" id="btn_login"></input>
+		    <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
+		  </form>`
+			const box = document.getElementById('box')
+			box.innerHTML = temp
+			const btn = document.getElementById('btn_login')
+			function Member(){let _uid, _pwd}
+
+			Member.prototype.setUid = function(x){	_uid = x}
+			Member.prototype.setPwd = function(x){	_pwd = x}
+			Member.prototype.getPwd = function(x){return _pwd}
+			Member.prototype.getUid = function(x){return _uid}
+			
+
+
+			btn.addEventListener('click', function(){
+			let member = new Member()
+			member.setUid(document.getElementById('uid').value)
+			member.setPwd(document.getElementById('pwd').value)
+			alert(`입력한 아이디 : ${member.getUid()}\n입력한 페스워드 :${member.getPwd()}`)
+			location.href = `login-success.html`
+			})
+
+		}
+		</script>
+</body>
+</html>

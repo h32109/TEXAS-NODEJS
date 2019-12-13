@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ex6</title>
+</head>
+<body>
+	<script>
+		window.onload = ()=>{
+			function Person(name, gender){
+				let _name = name
+				let _gender = gender
+				let _age
+				this.getName = function(){
+					return _name
+				}
+				this.getGender = function(){
+					return _gender
+				}
+				this.setAge = function(age){
+					_age = age
+				}
+				this.getAge = function(){
+					return _age
+				}
+				this.toString = function(){
+					return `${_age}살(세)${_gender}/${_name}님 환영합니다.`
+				}
+			}	
+
+			const person1 = new Person('원종석', '남자')
+			person1.setAge('23')
+
+			alert(person1.toString())
+		}
+	</script>
+</body>
+</html>
